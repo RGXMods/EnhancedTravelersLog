@@ -1,3 +1,9 @@
+﻿# v0.1.8 - 2026-06-30
+
+## Changes
+
+- Updated for WoW Retail 12.0.7 (Interface 120007).
+
 # v0.1.7 - 2026-04-29
 
 ## Documentation
@@ -18,8 +24,8 @@
 - **Minimap click landed on the wrong tab**: The RGX refactor replaced the
   v0.1.4 `OpenTravelersLog` flow with a heuristic text-search that just
   re-opened whatever Encounter Journal tab was last shown. Restored the
-  proper Blizzard sequence — `EncounterJournal_LoadUI` →
-  `EncounterJournal_OpenJournal` → `MonthlyActivitiesFrame_OpenFrame` — so
+  proper Blizzard sequence â€” `EncounterJournal_LoadUI` â†’
+  `EncounterJournal_OpenJournal` â†’ `MonthlyActivitiesFrame_OpenFrame` â€” so
   clicking the minimap always lands on Monthly Activities. Tab fallback
   (`MonthlyActivitiesTab` / `TravelersLogTab`) preserved for older clients.
 
