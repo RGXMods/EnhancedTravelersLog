@@ -1,5 +1,5 @@
 ﻿## Interface: 120007
-## Version: 0.1.8
+## Version: 0.1.9
 ## RequiredDeps: RGX-Framework
 ## Title: |cffbc6fa8E|r|cffffffffnhanced|r |cffbc6fa8T|r|cffffffffraveler's|r |cffbc6fa8L|r|cffffffffog|r|cffbc6fa8!|r
 ## Notes: Adds progress bars and a minimap launcher to the Traveler's Log.|nType |cffbc6fa8/etl|r for options.|n|cff8B1538[RGX]|r |cffbc6fa8By DonnieDice|r
