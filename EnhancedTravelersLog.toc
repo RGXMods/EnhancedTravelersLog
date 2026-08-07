@@ -6,7 +6,7 @@
 ## Author: DonnieDice
 ## Category: RGX
 ## Group: RGX
-## IconTexture: Interface\AddOns\EnhancedTravelersLog\media\logo
+## IconTexture: Interface\AddOns\EnhancedTravelersLog\media\logo.tga
 ## SavedVariables: ETLDB
 ## DefaultState: Enabled
 ## LoadOnDemand: 0
