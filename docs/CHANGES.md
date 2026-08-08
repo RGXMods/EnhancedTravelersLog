@@ -1,4 +1,11 @@
-﻿# v0.1.8 - 2026-06-30
+﻿# v0.1.9 - 2026-08-08
+
+## Changes
+- **RGX-Framework DB migration**: `ETLDB` → `RGX:NewDatabase("ETLDB", ...)` with `profileIsGlobal = true`
+- **Backward-compat**: `ETLDB` global remains as proxy to `ETL.db.global`
+- Cleaned up manual `ETLDB` initialization and defaults merging
+
+# v0.1.8 - 2026-06-30
 
 ## Changes
 

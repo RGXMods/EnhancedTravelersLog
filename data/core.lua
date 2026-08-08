@@ -6,7 +6,7 @@ ETL.activityCache = ETL.activityCache or {}
 
 local LEGACY_ADDON_NAME = "Enhanced_Travelers_Log"
 
-ETL.VERSION    = "v0.1.7"
+ETL.VERSION    = "v0.1.8"
 ETL.BAR_COLOR  = { r = 0.737, g = 0.435, b = 0.659 }
 ETL.CHAT_PREFIX = "|TInterface\\AddOns\\EnhancedTravelersLog\\media\\logo.tga:16:16:0:0|t - |cffffffff[|r|cffbc6fa8ETL|r|cffffffff]|r "
 
@@ -32,6 +32,14 @@ ETL.DEFAULTS = {
         layoutVersion      = 5,
     },
 }
+
+-- Initialize RGX Database
+ETL.db = RGX:NewDatabase("ETLDB", ETL.DEFAULTS, {
+    profileIsGlobal = true,
+})
+
+-- Backward-compat global alias
+ETLDB = ETL.db.global
 
 local function OnAddonLoaded(event, addonName)
     if addonName ~= ADDON_NAME and addonName ~= LEGACY_ADDON_NAME and addonName ~= "Blizzard_EncounterJournal" then return end

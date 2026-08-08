@@ -86,7 +86,7 @@ function ETL:HandleSlashCommands(input)
 end
 
 RGX:OnLoad("EnhancedTravelersLog", function()
-    ETLDB = ETLDB or {}
+    -- Database auto-initialized via RGX:NewDatabase
     if ETLDB.minimapAngle == nil    then ETLDB.minimapAngle = DEFAULT_ANGLE end
     if ETLDB.minimapIconEnabled == nil then ETLDB.minimapIconEnabled = true end
 end)
@@ -94,7 +94,7 @@ end)
 RGX:OnLogin(function()
     RGX:RegisterSlashCommand({"etl"}, function(input) ETL:HandleSlashCommands(input) end)
 
-    ETL._minimapBtn = RGX:Minimap({
+    ETL._minimapBtn = RGXMinimap:Create({
         name         = "ETL_MinimapButton",
         icon         = "Interface\\AddOns\\EnhancedTravelersLog\\media\\logo",
         defaultAngle = DEFAULT_ANGLE,

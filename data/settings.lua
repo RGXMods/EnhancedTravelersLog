@@ -29,9 +29,18 @@ local function MigrateCoreSettings(core)
     return core
 end
 
+-- Initialize RGX Database
+local RGX = assert(_G.RGXFramework, "EnhancedTravelersLog: RGX-Framework not loaded")
+
+ETL.db = RGX:NewDatabase("ETLDB", ETL.DEFAULTS, {
+    profileIsGlobal = true,
+})
+
+-- Backward-compat global alias
+ETLDB = ETL.db.global
+
 function ETL:EnsureSettings()
-    ETLDB = ETLDB or {}
-    DeepDefaults(ETLDB, ETL.DEFAULTS)
+    -- Database is auto-initialized by RGX:NewDatabase
     MigrateCoreSettings(ETLDB.core)
     return ETLDB.core
 end
