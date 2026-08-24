@@ -175,7 +175,7 @@ jobs:
               color=9764929
               footer="RGX Mods • Stable Release"
               description="A new stable release is live."
-              release_url="https://github.com/DonnieDice/EnhancedTravelersLog/releases/tag/${version}"
+              release_url="https://github.com/RGXMods/EnhancedTravelersLog/releases/tag/${version}"
               downloads="[CurseForge](https://www.curseforge.com/wow/addons/enhanced-travelers-log) • [Wago](https://addons.wago.io/addons/vNAekjNo) • [WoWInterface](https://www.wowinterface.com/downloads/info26643) • [GitHub](${release_url})"
               channel="Release"
               ;;
@@ -184,7 +184,7 @@ jobs:
               color=16744448
               footer="RGX Mods • Beta Build"
               description="Beta build available for testing."
-              release_url="https://github.com/DonnieDice/EnhancedTravelersLog/releases/tag/${version}"
+              release_url="https://github.com/RGXMods/EnhancedTravelersLog/releases/tag/${version}"
               downloads="[CurseForge](https://www.curseforge.com/wow/addons/enhanced-travelers-log) • [GitHub](${release_url})"
               channel="Beta"
               ;;
@@ -193,7 +193,7 @@ jobs:
               color=9109504
               footer="RGX Mods • Alpha Build"
               description="Alpha build available for testing."
-              release_url="https://github.com/DonnieDice/EnhancedTravelersLog/tree/alpha"
+              release_url="https://github.com/RGXMods/EnhancedTravelersLog/tree/alpha"
               downloads="[GitHub Alpha Branch](${release_url})"
               channel="Alpha"
               ;;
@@ -202,7 +202,7 @@ jobs:
               color=3447003
               footer="RGX Mods • Dev Build"
               description="Development build from the dev branch."
-              release_url="https://github.com/DonnieDice/EnhancedTravelersLog/tree/dev"
+              release_url="https://github.com/RGXMods/EnhancedTravelersLog/tree/dev"
               downloads="[GitHub Dev Branch](${release_url})"
               channel="Dev"
               ;;
@@ -211,7 +211,7 @@ jobs:
               color=10000000
               footer="RGX Mods"
               description="Build completed."
-              release_url="https://github.com/DonnieDice/EnhancedTravelersLog/releases"
+              release_url="https://github.com/RGXMods/EnhancedTravelersLog/releases"
               downloads="[GitHub](${release_url})"
               channel="Unknown"
               ;;
@@ -219,13 +219,13 @@ jobs:
 
           jq -n \
             --arg username "ETL Releases" \
-            --arg avatar_url "https://raw.githubusercontent.com/DonnieDice/EnhancedTravelersLog/main/media/logo.png" \
+            --arg avatar_url "https://raw.githubusercontent.com/RGXMods/EnhancedTravelersLog/main/media/logo.png" \
             --arg title "$title" \
             --arg url "$release_url" \
             --arg description "$description" \
             --argjson color "$color" \
             --arg footer "$footer" \
-            --arg icon_url "https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/media/kiwi.gif" \
+            --arg icon_url "https://raw.githubusercontent.com/RGXMods/SimpleQuestPlates/main/media/kiwi.gif" \
             --arg timestamp "${RELEASE_TIMESTAMP}" \
             --arg summary "$summary" \
             --arg downloads "$downloads" \
@@ -261,19 +261,19 @@ jobs:
             --arg timestamp "${{ steps.version.outputs.timestamp }}" \
             '{
               username: "ETL Build Failed",
-              avatar_url: "https://raw.githubusercontent.com/DonnieDice/EnhancedTravelersLog/main/media/logo.png",
+              avatar_url: "https://raw.githubusercontent.com/RGXMods/EnhancedTravelersLog/main/media/logo.png",
               embeds: [{
                 title: "❌ ETL Build Failed",
                 description: "The release workflow encountered an error",
-                url: "https://github.com/DonnieDice/EnhancedTravelersLog/actions/runs/\($run_id)",
+                url: "https://github.com/RGXMods/EnhancedTravelersLog/actions/runs/\($run_id)",
                 color: 15158332,
                 fields: [
                   { "name": "Version", "value": $version, "inline": true },
-                  { "name": "Workflow", "value": "[View Logs](https://github.com/DonnieDice/EnhancedTravelersLog/actions/runs/\($run_id))", "inline": true }
+                  { "name": "Workflow", "value": "[View Logs](https://github.com/RGXMods/EnhancedTravelersLog/actions/runs/\($run_id))", "inline": true }
                 ],
                 footer: {
                   "text": "RGX Mods - Build System",
-                  "icon_url": "https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/media/kiwi.gif"
+                  "icon_url": "https://raw.githubusercontent.com/RGXMods/SimpleQuestPlates/main/media/kiwi.gif"
                 },
                 timestamp: $timestamp
               }]
