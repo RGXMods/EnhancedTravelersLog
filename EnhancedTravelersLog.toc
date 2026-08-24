@@ -12,7 +12,7 @@
 ## LoadOnDemand: 0
 
 ## X-Category: UI Media, Questing & Leveling, Miscellaneous
-## X-Website: https://github.com/DonnieDice/EnhancedTravelersLog
+## X-Website: https://github.com/RGXMods/EnhancedTravelersLog
 ## X-Curse-Project-ID: 
 ## X-Wago-ID: vNAekjNo
 ## X-WoWI-ID: 26643
