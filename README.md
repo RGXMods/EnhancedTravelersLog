@@ -33,7 +33,6 @@
 <!-- Platform Badges -->
 [![CurseForge](https://img.shields.io/badge/CurseForge-Downloads-orange?style=flat-square&logo=curseforge)](https://www.curseforge.com/wow/addons/enhanced-travelers-log)
 [![Wago](https://img.shields.io/badge/Wago.io-Downloads-purple?style=flat-square&logo=wago)](https://addons.wago.io/addons/enhanced-travelers-log)
-[![WoWInterface](https://img.shields.io/badge/WoWInterface-Downloads-blue?style=flat-square&logo=worldofwarcraft)](https://www.wowinterface.com/downloads/info26643)
 
 <!-- WoW Compatibility -->
 [![WoW Retail](https://img.shields.io/badge/WoW-Midnight-bc6fa8?style=flat-square&logo=worldofwarcraft)](https://worldofwarcraft.com)
@@ -182,7 +181,6 @@ _<span style="color:#e67e23">Every donation helps fund new features and improvem
 2. **<span style="color:#2dc26b">Download ETL</span>** <span style="color:#e67e23">from your preferred platform</span><span style="color:#3598db">:</span>
    - [<span style="color:#ff6b6b">CurseForge</span>](https://www.curseforge.com/wow/addons/enhanced-travelers-log)
    - [<span style="color:#b96ad9">Wago.io</span>](https://addons.wago.io/addons/enhanced-travelers-log)
-   - [<span style="color:#4ecdc4">WoWInterface</span>](https://www.wowinterface.com/downloads/info26643)
    - [<span style="color:#24292e">GitHub</span>](https://github.com/RGXMods/EnhancedTravelersLog/releases)
 
 3. **<span style="color:#4ecdc4">Extract</span>** <span style="color:#e67e23">to your</span> <span style="color:#06c">WoW</span> <span style="color:#e67e23">AddOns directory</span><span style="color:#3598db">:</span>
