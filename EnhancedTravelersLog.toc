@@ -15,7 +15,6 @@
 ## X-Website: https://github.com/RGXMods/EnhancedTravelersLog
 ## X-Curse-Project-ID: 
 ## X-Wago-ID: vNAekjNo
-## X-WoWI-ID: 26643
 
 data/core.lua
 data/settings.lua
