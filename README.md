@@ -20,15 +20,14 @@
 ---
 
 <!-- GitHub Stats & Badges -->
-[![GitHub release](https://img.shields.io/github/v/release/DonnieDice/EnhancedTravelersLog?style=for-the-badge&logo=github&color=success)](https://github.com/RGXMods/EnhancedTravelersLog/releases)
-[![GitHub stars](https://img.shields.io/github/stars/DonnieDice/EnhancedTravelersLog?style=for-the-badge&logo=github&color=yellow)](https://github.com/RGXMods/EnhancedTravelersLog/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/DonnieDice/EnhancedTravelersLog?style=for-the-badge&logo=github&color=blue)](https://github.com/RGXMods/EnhancedTravelersLog/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/DonnieDice/EnhancedTravelersLog?style=for-the-badge&logo=github&color=red)](https://github.com/RGXMods/EnhancedTravelersLog/issues)
-[![GitHub license](https://img.shields.io/github/license/DonnieDice/EnhancedTravelersLog?style=for-the-badge&logo=github&color=lightgrey)](https://github.com/RGXMods/EnhancedTravelersLog/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/RGXMods/EnhancedTravelersLog?style=for-the-badge&logo=github&color=success)](https://github.com/RGXMods/EnhancedTravelersLog/releases)
+[![GitHub stars](https://img.shields.io/github/stars/RGXMods/EnhancedTravelersLog?style=for-the-badge&logo=github&color=yellow)](https://github.com/RGXMods/EnhancedTravelersLog/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/RGXMods/EnhancedTravelersLog?style=for-the-badge&logo=github&color=blue)](https://github.com/RGXMods/EnhancedTravelersLog/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/RGXMods/EnhancedTravelersLog?style=for-the-badge&logo=github&color=red)](https://github.com/RGXMods/EnhancedTravelersLog/issues)
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/DonnieDice/EnhancedTravelersLog?style=flat-square&logo=github)](https://github.com/RGXMods/EnhancedTravelersLog/commits/main)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/DonnieDice/EnhancedTravelersLog?style=flat-square&logo=github)](https://github.com/RGXMods/EnhancedTravelersLog/graphs/contributors)
-[![GitHub repo size](https://img.shields.io/github/repo-size/DonnieDice/EnhancedTravelersLog?style=flat-square&logo=github)](https://github.com/RGXMods/EnhancedTravelersLog)
+[![GitHub last commit](https://img.shields.io/github/last-commit/RGXMods/EnhancedTravelersLog?style=flat-square&logo=github)](https://github.com/RGXMods/EnhancedTravelersLog/commits/main)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/RGXMods/EnhancedTravelersLog?style=flat-square&logo=github)](https://github.com/RGXMods/EnhancedTravelersLog/graphs/contributors)
+[![GitHub repo size](https://img.shields.io/github/repo-size/RGXMods/EnhancedTravelersLog?style=flat-square&logo=github)](https://github.com/RGXMods/EnhancedTravelersLog)
 
 <!-- Platform Badges -->
 [![CurseForge](https://img.shields.io/badge/CurseForge-Downloads-orange?style=flat-square&logo=curseforge)](https://www.curseforge.com/wow/addons/enhanced-travelers-log)
@@ -164,7 +163,7 @@ _<span style="color:#e67e23">Every donation helps fund new features and improvem
 
 | WoW Version | Interface | Status | TOC File |
 |-------------|-----------|--------|----------|
-| **Midnight (Retail)** | `120005` | ✅ Fully Supported | `EnhancedTravelersLog.toc` |
+| **Midnight (Retail)** | `120007` | ✅ Fully Supported | `EnhancedTravelersLog.toc` |
 
 </div>
 
@@ -268,12 +267,6 @@ _<span style="color:#e67e23">For updates, join our</span> [<span style="color:#7
 - <span style="color:#ff6b6b">💡 **Suggest features**</span> <span style="color:#e67e23">in our</span> [<span style="color:#7289da">Discord</span>](https://discord.gg/hK9N3esnce)
 - <span style="color:#4ecdc4">🌍 **Help with translations**</span> <span style="color:#e67e23">for global players</span>
 - <span style="color:#2dc26b">⭐ **Star the repository**</span> <span style="color:#e67e23">to show your support</span>
-
----
-
-## <span style="color:#bc6fa8">📄 License</span>
-
-<span style="color:#e67e23">This project is licensed under the</span> [<span style="color:#2dc26b">MIT License</span>](https://github.com/RGXMods/EnhancedTravelersLog/blob/main/LICENSE)<span style="color:#e67e23">.</span>
 
 ---
 
