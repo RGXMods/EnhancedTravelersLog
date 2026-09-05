@@ -95,6 +95,68 @@ function ETL:HideProgressBar(button)
     if button and button.ETL_ProgressBarText   then button.ETL_ProgressBarText:Hide() end
 end
 
+function ETL:EnsureActivityCountWidget(button)
+    if not button or button.ETL_ActivityCount or not button.CreateFontString then return end
+
+    local text = MakeText(button, "OVERLAY", "GameFontHighlightSmall")
+    text:SetPoint("RIGHT", button, "RIGHT", -10, 1)
+    text:SetJustifyH("RIGHT")
+    text:SetTextColor(0.8, 0.8, 0.8, 1)
+    text:Hide()
+    button.ETL_ActivityCount = text
+end
+
+function ETL:UpdateFilterActivityCount(button, selected)
+    if not button then return end
+
+    button.ETL_Selected = selected == true
+    self:EnsureActivityCountWidget(button)
+
+    local text = button.ETL_ActivityCount
+    local total = self.activitySummaryTotal
+    local showCount = text and button.ETL_Selected and total and total > 0
+        and self:GetSettings().enabled and not self:DetectDuplicateInstall()
+        and not (button.LockIcon and button.LockIcon.IsShown and button.LockIcon:IsShown())
+
+    if showCount then
+        text:SetText(string.format("%d / %d available", self.activitySummaryCompleted or 0, total))
+        text:Show()
+    elseif text then
+        text:Hide()
+    end
+
+    if button.Label and button.Label.ClearAllPoints then
+        button.Label:ClearAllPoints()
+        button.Label:SetPoint("TOPLEFT", button, "TOPLEFT", 10, 1)
+        if showCount then
+            button.Label:SetPoint("BOTTOMRIGHT", text, "BOTTOMLEFT", -4, 1)
+        else
+            button.Label:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, 1)
+        end
+    end
+end
+
+function ETL:RefreshFilterActivityCounts(filterScrollBox)
+    if not filterScrollBox or not filterScrollBox.ForEachFrame then return end
+    filterScrollBox:ForEachFrame(function(_, button)
+        ETL:UpdateFilterActivityCount(button, button.ETL_Selected)
+    end)
+end
+
+function ETL:UpdateActivitySummary(frame, activities)
+    if not frame then return end
+
+    if not activities and _G.C_PerksActivities and C_PerksActivities.GetPerksActivitiesInfo then
+        local info = C_PerksActivities.GetPerksActivitiesInfo()
+        activities = info and info.activities
+    end
+
+    local selectedFilter = frame.FilterList and frame.FilterList.GetFilterSetting
+        and frame.FilterList:GetFilterSetting() or nil
+    self.activitySummaryCompleted, self.activitySummaryTotal = self:GetActivitySummary(activities, selectedFilter)
+    self:RefreshFilterActivityCounts(frame.FilterList and frame.FilterList.ScrollBox)
+end
+
 function ETL:ApplyProgressBarLayout(button, data)
     if not button.ETL_ProgressBarBg or not button.ETL_ProgressBar then return end
 
