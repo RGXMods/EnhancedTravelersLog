@@ -53,7 +53,7 @@
 1.  **<span style="color: #2dc26b;">Install RGX-Framework</span>** <span style="color: #e67e23;">first — ETL requires it</span><span style="color: #3598db;">:</span>
     *   [<span style="color: #8b4b5c;">RGX-Framework on GitHub</span>](https://github.com/RGXMods/RGX-Framework)
 2.  **<span style="color: #2dc26b;">Download</span>** <span style="color: #8b4b5c;">R</span><span style="color: #8b4b5c;">G</span><span style="color: #8b4b5c;">X</span> <span style="color: #fff;">| </span> <span style="color: #bc6fa8;">ETL</span> <span style="color: #e67e23;">from your preferred platform</span><span style="color: #3598db;">:</span>
-    *   [<span style="color: #4ecdc4;">CurseForge</span>](https://www.curseforge.com/wow/addons/enhanced-travelers-log)
+    *   [<span style="color: #4ecdc4;">CurseForge</span>](https://www.curseforge.com/wow/addons/enhancedtravelerslog)
     *   [<span style="color: #24292e;">GitHub</span>](https://github.com/RGXMods/EnhancedTravelersLog)
     *   [<span style="color: #b96ad9;">Wago.io</span>](https://addons.wago.io/addons/enhanced-travelers-log)
 3.  **<span style="color: #4ecdc4;">Extract</span>** <span style="color: #e67e23;">to your</span> <span style="color: #06c;">WoW</span> `Interface/AddOns` <span style="color: #e67e23;">directory</span><span style="color: #3598db;">:</span>
@@ -96,6 +96,77 @@
 **<span style="color: #ff6b6b;">Disclaimer</span><span style="color: #3598db;">:</span>** <span style="color: #e67e23;">This</span> <span style="color: #8b4b5c;">R</span><span style="color: #8b4b5c;">G</span><span style="color: #8b4b5c;">X</span> <span style="color: #fff;">| </span> <span style="color: #bc6fa8;">ETL</span> <span style="color: #e67e23;">addon is provided</span> <span style="color: #a8a8a8;">"as is"</span> <span style="color: #e67e23;">without warranty. Use at your own risk. The author is not responsible for any issues arising from its use.</span>
 
 ***
+
+## <span style="color:#bc6fa8">🆕 What's New</span>
+
+_<span style="color:#e67e23">See</span> [<span style="color:#bc6fa8">GitHub Releases</span>](https://github.com/RGXMods/EnhancedTravelersLog/releases) <span style="color:#e67e23">for the full release history and latest updates.</span>_
+
+---
+
+## <span style="color:#bc6fa8">🛠️ Configuration Tips</span>
+
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+
+### <span style="color:#4ecdc4">Recommended Setup:</span>
+- **<span style="color:#2dc26b">Default:</span>** <span style="color:#e67e23">ETL works out of the box — just click the minimap icon</span>
+- **<span style="color:#bc6fa8">Hide completed:</span>** <span style="color:#e67e23">Try `/etl completed on` once you've cleared most of the month</span>
+- **<span style="color:#b96ad9">Verify:</span>** <span style="color:#e67e23">Use `/etl status` to confirm the addon is active</span>
+
+</td>
+<td width="50%" valign="top">
+
+### <span style="color:#4ecdc4">Quick Commands:</span>
+```
+/etl              -- Open Traveler's Log
+/etl bars off     -- Disable progress bars
+/etl completed on -- Hide completed rows
+/etl status       -- Check current state
+/etl help         -- See all commands
+```
+
+</td>
+</tr>
+</table>
+
+---
+
+## <span style="color:#bc6fa8">🐛 Known Issues</span>
+
+### <span style="color:#b96ad9">RGX-Framework dependency</span>
+- **<span style="color:#ff6b6b">Issue</span><span style="color:#3598db">:</span>** <span style="color:#e67e23">ETL will not load without RGX-Framework</span>
+- **<span style="color:#2dc26b">Workaround</span><span style="color:#3598db">:</span>** <span style="color:#e67e23">Install RGX-Framework alongside ETL — it's required, not optional</span>
+
+_<span style="color:#e67e23">For updates, join our</span> [<span style="color:#7289da">Discord</span>](https://discord.gg/hK9N3esnce)<span style="color:#e67e23">.</span>_
+
+---
+
+## <span style="color:#bc6fa8">🔧 Troubleshooting</span>
+
+**<span style="color:#ff6b6b">Bars not showing?</span>**
+- <span style="color:#e67e23">Confirm RGX-Framework is enabled in your AddOns list</span>
+- <span style="color:#e67e23">Run</span> `/etl status` <span style="color:#e67e23">to check the active state</span>
+- <span style="color:#e67e23">Try</span> `/etl refresh` <span style="color:#e67e23">to re-scan visible rows</span>
+
+**<span style="color:#ff6b6b">Minimap click opens to the wrong tab?</span>**
+- <span style="color:#e67e23">Update to the latest release — older versions had a tab navigation regression</span>
+- <span style="color:#e67e23">Try</span> `/reload` <span style="color:#e67e23">to refresh the UI</span>
+
+**<span style="color:#ff6b6b">Still having trouble?</span>**
+- <span style="color:#e67e23">Join our</span> [<span style="color:#7289da">Discord</span>](https://discord.gg/hK9N3esnce) <span style="color:#e67e23">for instant support</span>
+- <span style="color:#e67e23">Open a</span> [<span style="color:#ff6b6b">GitHub Issue</span>](https://github.com/RGXMods/EnhancedTravelersLog/issues)
+
+---
+
+## <span style="color:#bc6fa8">🚀 Upcoming Features</span>
+
+- <span style="color:#2dc26b">**In-game Options Panel**</span> <span style="color:#e67e23">— Tune bar layout and colors without slash commands</span>
+- <span style="color:#bc6fa8">**Custom Bar Color**</span> <span style="color:#e67e23">— Pick your own theme via the RGX color picker</span>
+- <span style="color:#b96ad9">**Profile System**</span> <span style="color:#e67e23">— Save and share configurations</span>
+- <span style="color:#4ecdc4">**Reward Preview**</span> <span style="color:#e67e23">— Glance at the reward for each activity from the row</span>
+
+---
 
 ## <span style="color: #4ecdc4;">🌟 Thank you for choosing </span> <span style="color: #8b4b5c;">R</span><span style="color: #8b4b5c;">G</span><span style="color: #8b4b5c;">X</span> <span style="color: #4ecdc4;">Mods! 🌟</span>
 
