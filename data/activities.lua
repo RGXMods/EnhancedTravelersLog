@@ -97,6 +97,56 @@ function ETL:IsActivityCompleted(activity)
     return activity and activity.completed == true
 end
 
+function ETL:GetActivitySummary(activities, selectedFilter)
+    if not activities then
+        return nil, nil
+    end
+
+    local activitiesByID = {}
+    local childrenByParentID = {}
+    for _, activity in pairs(activities) do
+        if activity and activity.ID then
+            activitiesByID[activity.ID] = activity
+            if activity.supersedes and activity.supersedes ~= 0 then
+                childrenByParentID[activity.supersedes] = activity
+            end
+        end
+    end
+
+    -- Blizzard represents superseding stages as one activity chain. Link the
+    -- flat API response the same way so GetActiveActivityNode remains the
+    -- single source of truth for staged completion.
+    for parentID, child in pairs(childrenByParentID) do
+        local parent = activitiesByID[parentID]
+        if parent and not parent.child then
+            parent.child = child
+        end
+    end
+
+    local completed, total = 0, 0
+    for _, activity in pairs(activities) do
+        if activity and (not activity.supersedes or activity.supersedes == 0) then
+            local matchesFilter = selectedFilter == nil or selectedFilter == _G.ALL
+            for _, tag in pairs(activity.tagNames or {}) do
+                if tag == selectedFilter then
+                    matchesFilter = true
+                    break
+                end
+            end
+
+            if matchesFilter then
+                local activeActivity = self:GetActiveActivityNode(activity)
+                total = total + 1
+                if self:IsActivityCompleted(activeActivity) then
+                    completed = completed + 1
+                end
+            end
+        end
+    end
+
+    return completed, total
+end
+
 function ETL:NormalizeNumericToken(value)
     if value == nil then
         return nil

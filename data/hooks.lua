@@ -5,8 +5,11 @@ function ETL:RefreshIfVisible()
     if frame and frame:IsShown() then
         if self:DetectDuplicateInstall() or not self:GetSettings().enabled then
             self:HideVisibleRows(frame.ScrollBox)
+            self.activitySummaryCompleted, self.activitySummaryTotal = nil, nil
+            self:RefreshFilterActivityCounts(frame.FilterList and frame.FilterList.ScrollBox)
         else
             self:RefreshVisibleRows(frame.ScrollBox)
+            self:UpdateActivitySummary(frame)
         end
     end
 end
@@ -29,14 +32,20 @@ function ETL:InstallMixinHooks()
         ETL:RefreshVisibleRows(frameSelf and frameSelf.ScrollBox)
     end
 
+    local function refreshRowsAndSummary(frameSelf, activities)
+        refreshRows(frameSelf)
+        ETL:UpdateActivitySummary(frameSelf, activities)
+    end
+
     local mixins = {
         { _G.MonthlyActivitiesButtonMixin,           "Init",            function(btn) ETL:DecorateRow(btn) end },
         { _G.MonthlyActivitiesButtonMixin,           "UpdateButtonState", function(btn) ETL:DecorateRow(btn) end },
         { _G.MonthlySupersedeActivitiesButtonMixin,  "Init",            function(btn) ETL:DecorateRow(btn) end },
         { _G.MonthlySupersedeActivitiesButtonMixin,  "UpdateButtonState", function(btn) ETL:DecorateRow(btn) end },
         { _G.MonthlyActivitiesFrameMixin,            "UpdateActivities", refreshRows },
-        { _G.MonthlyActivitiesFrameMixin,            "SetActivities",   refreshRows },
+        { _G.MonthlyActivitiesFrameMixin,            "SetActivities",   refreshRowsAndSummary },
         { _G.MonthlyActivitiesFrameMixin,            "OnShow",          refreshRows },
+        { _G.MonthlyActivitiesFilterListButtonMixin, "SetSelected",     function(btn, selected) ETL:UpdateFilterActivityCount(btn, selected) end },
     }
 
     local count = 0
@@ -62,6 +71,7 @@ function ETL:Install()
         if frame and frame.ScrollBox then
             self:RefreshVisibleRows(frame.ScrollBox)
         end
+        self:UpdateActivitySummary(frame)
         self:DebugMessage("Hooks installed (" .. ETL.VERSION .. ").")
     end
 end
