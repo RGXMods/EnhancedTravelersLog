@@ -1,4 +1,9 @@
-﻿# v0.1.9 - 2026-08-08
+﻿# v0.1.10 - 2026-09-29
+
+## Changes
+- Added the `AGENTS.md` framework-build and interface-versioning directives; the Retail TOC interface is refreshed to the live `120100` and `ETL.VERSION` is synchronized with the TOC.
+
+# v0.1.9 - 2026-08-08
 
 ## Changes
 - **RGX-Framework DB migration**: `ETLDB` → `RGX:NewDatabase("ETLDB", ...)` with `profileIsGlobal = true`
