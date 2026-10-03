@@ -1,4 +1,4 @@
-﻿## Interface: 120100
+## Interface: 120100
 ## Version: 0.1.10
 ## RequiredDeps: RGX-Framework
 ## Title: |cffbc6fa8E|r|cffffffffnhanced|r |cffbc6fa8T|r|cffffffffraveler's|r |cffbc6fa8L|r|cffffffffog|r|cffbc6fa8!|r
