@@ -1,3 +1,5 @@
+local L = ETL.L
+
 function ETL:PrintCoreStatus()
     local frame = self:GetMonthlyActivitiesFrame()
     local visibleRows = 0
@@ -9,27 +11,27 @@ function ETL:PrintCoreStatus()
     end
 
     local settings = self:GetSettings()
-    self:PrintMessage("Core status:")
-    self:PrintMessage("version " .. ETL.VERSION)
-    self:PrintMessage("bars " .. (settings.enabled and "enabled" or "disabled"))
-    self:PrintMessage("hide completed " .. (settings.hideCompleted and "enabled" or "disabled"))
-    self:PrintMessage("debug " .. (settings.debug and "enabled" or "disabled"))
-    self:PrintMessage("duplicate " .. (self:DetectDuplicateInstall() and "detected" or "not detected"))
-    self:PrintMessage("visible rows " .. visibleRows)
-    self:PrintMessage("hooks " .. (self._installed and "installed" or "pending"))
-    self:PrintMessage("cached activities " .. self:CountCachedActivities())
+    self:PrintMessage(L["status_header"])
+    self:PrintMessage(string.format(L["status_version"], ETL.VERSION))
+    self:PrintMessage(string.format(L["status_bars"], settings.enabled and L["state_enabled"] or L["state_disabled"]))
+    self:PrintMessage(string.format(L["status_hide_completed"], settings.hideCompleted and L["state_enabled"] or L["state_disabled"]))
+    self:PrintMessage(string.format(L["status_debug"], settings.debug and L["state_enabled"] or L["state_disabled"]))
+    self:PrintMessage(string.format(L["status_duplicate"], self:DetectDuplicateInstall() and L["status_duplicate_detected"] or L["status_duplicate_not_detected"]))
+    self:PrintMessage(string.format(L["status_visible_rows"], visibleRows))
+    self:PrintMessage(string.format(L["status_hooks"], self._installed and L["status_hooks_installed"] or L["status_hooks_pending"]))
+    self:PrintMessage(string.format(L["status_cached_activities"], self:CountCachedActivities()))
 end
 
 function ETL:PrintCoreHelp()
-    self:PrintMessage("Core commands:")
-    self:PrintMessage("/etl debug - Toggle ETL core debug output")
-    self:PrintMessage("/etl refresh - Re-scan visible Traveler's Log rows")
-    self:PrintMessage("/etl welcome - Toggle ETL login welcome message")
-    self:PrintMessage("/etl bars on - Enable ETL progress bars")
-    self:PrintMessage("/etl bars off - Disable ETL progress bars")
-    self:PrintMessage("/etl completed on - Hide completed Traveler's Log rows")
-    self:PrintMessage("/etl completed off - Show completed Traveler's Log rows")
-    self:PrintMessage("/etl version - Show ETL version")
+    self:PrintMessage(L["help_header"])
+    self:PrintMessage(L["help_debug"])
+    self:PrintMessage(L["help_refresh"])
+    self:PrintMessage(L["help_welcome"])
+    self:PrintMessage(L["help_bars_on"])
+    self:PrintMessage(L["help_bars_off"])
+    self:PrintMessage(L["help_completed_on"])
+    self:PrintMessage(L["help_completed_off"])
+    self:PrintMessage(L["help_version"])
 end
 
 function ETL:HandleCoreSlashCommand(input)
@@ -38,13 +40,13 @@ function ETL:HandleCoreSlashCommand(input)
     if input == "debug" then
         local settings = self:GetSettings()
         settings.debug = not settings.debug
-        self:PrintMessage("Debug " .. (settings.debug and "enabled." or "disabled."))
+        self:PrintMessage(string.format(L["debug_toggled"], settings.debug and L["debug_enabled"] or L["debug_disabled"]))
         return true
     end
 
     if input == "refresh" then
         self:RefreshProgressBars()
-        self:PrintMessage("Refreshed visible Traveler's Log rows.")
+        self:PrintMessage(L["refreshed_rows"])
         return true
     end
 
@@ -56,33 +58,33 @@ function ETL:HandleCoreSlashCommand(input)
     if input == "bars on" then
         self:GetSettings().enabled = true
         self:RefreshProgressBars()
-        self:PrintMessage("Progress bars enabled.")
+        self:PrintMessage(L["bars_enabled"])
         return true
     end
 
     if input == "bars off" then
         self:GetSettings().enabled = false
         self:RefreshProgressBars()
-        self:PrintMessage("Progress bars disabled.")
+        self:PrintMessage(L["bars_disabled"])
         return true
     end
 
     if input == "completed on" then
         self:GetSettings().hideCompleted = true
         self:RefreshProgressBars()
-        self:PrintMessage("Completed Traveler's Log rows hidden.")
+        self:PrintMessage(L["completed_hidden"])
         return true
     end
 
     if input == "completed off" then
         self:GetSettings().hideCompleted = false
         self:RefreshProgressBars()
-        self:PrintMessage("Completed Traveler's Log rows shown.")
+        self:PrintMessage(L["completed_shown"])
         return true
     end
 
     if input == "version" then
-        self:PrintMessage("Version " .. ETL.VERSION)
+        self:PrintMessage(string.format(L["version_line"], ETL.VERSION))
         return true
     end
 

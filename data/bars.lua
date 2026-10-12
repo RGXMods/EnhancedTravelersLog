@@ -119,7 +119,7 @@ function ETL:UpdateFilterActivityCount(button, selected)
         and not (button.LockIcon and button.LockIcon.IsShown and button.LockIcon:IsShown())
 
     if showCount then
-        text:SetText(string.format("%d / %d available", self.activitySummaryCompleted or 0, total))
+        text:SetText(string.format(ETL.L["available_format"], self.activitySummaryCompleted or 0, total))
         text:Show()
     elseif text then
         text:Hide()
@@ -227,7 +227,7 @@ function ETL:UpdateProgressBar(button)
     if not current or not total or total <= 0 then
         -- WoW removes requirementsList from completed activities — show a full bar.
         if data and data.completed then
-            current, total, label = 1, 1, "Complete"
+            current, total, label = 1, 1, ETL.L["complete"]
         else
             self:HideProgressBar(button)
             return
@@ -236,7 +236,7 @@ function ETL:UpdateProgressBar(button)
 
     if data and data.completed then
         current = total
-        if not label or label == "" then label = "Complete" end
+        if not label or label == "" then label = ETL.L["complete"] end
     end
 
     local r, g, b = self:GetConfiguredBarColor()
@@ -250,7 +250,7 @@ function ETL:UpdateProgressBar(button)
     button.ETL_ProgressBar:SetMinMaxValues(0, total)
     button.ETL_ProgressBar:SetValue(shown)
     if button.ETL_ProgressBarText then
-        button.ETL_ProgressBarText:SetText(label or string.format("%d / %d", shown, total))
+        button.ETL_ProgressBarText:SetText(label or string.format(ETL.L["progress_format"], shown, total))
     end
 end
 

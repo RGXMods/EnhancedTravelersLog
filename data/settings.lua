@@ -56,23 +56,23 @@ end
 function ETL:ShowWelcomeMessage()
     local settings = self:GetSettings()
     if settings.showWelcomeMessage == false then return end
-    self:PrintMessage("Welcome. Use |cffbc6fa8/etl|r to open Traveler's Log or |cffbc6fa8/etl help|r for more commands.")
-    self:PrintMessage("|cffffff00Version:|r |cff8080ff" .. ETL.VERSION .. "|r")
+    self:PrintMessage(ETL.L["welcome_message"])
+    self:PrintMessage(string.format(ETL.L["version_label"], ETL.VERSION))
 end
 
 function ETL:ToggleWelcomeMessage()
     local settings = self:GetSettings()
     settings.showWelcomeMessage = not (settings.showWelcomeMessage == false)
     if settings.showWelcomeMessage then
-        self:PrintMessage("|cff58be81Welcome message enabled.|r")
+        self:PrintMessage(ETL.L["welcome_enabled"])
     else
-        self:PrintMessage("|cffff7b72Welcome message disabled.|r")
+        self:PrintMessage(ETL.L["welcome_disabled"])
     end
 end
 
 function ETL:DebugMessage(message)
     if self:GetSettings().debug then
-        self:PrintMessage("Debug: " .. message)
+        self:PrintMessage(string.format(ETL.L["debug_prefix"], message))
     end
 end
 

@@ -169,6 +169,8 @@ _<span style="color:#e67e23">Every donation helps fund new features and improvem
 
 **<span style="color:#ff6b6b">Required Dependency:</span>** <span style="color:#e67e23">RGX-Framework must be installed and enabled.</span>
 
+**<span style="color:#2dc26b">Language Support:</span>** <span style="color:#e67e23">ETL ships complete translations for every WoW client locale:</span> <span style="color:#e67e23">**English (enUS)**, **German (deDE)**, **Spanish (esES/esMX)**, **French (frFR)**, **Italian (itIT)**, **Korean (koKR)**, **Portuguese (ptBR/ptPT)**, **Russian (ruRU)**, **Simplified Chinese (zhCN)**, and **Traditional Chinese (zhTW)**.</span> <span style="color:#e67e23">The addon automatically matches your game client's language via the</span> `## X-Localizations` <span style="color:#e67e23">TOC declaration, and any string missing from a translation falls back to English without errors.</span>
+
 ---
 
 <a id="installation"></a>
