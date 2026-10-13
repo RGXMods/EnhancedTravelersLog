@@ -1,4 +1,8 @@
-﻿# v0.1.10 - 2026-09-29
+﻿# Non-beta Candidate: [v0.1.11](changelogs/0.1.11.md)
+
+Retail 12.1.5 / Interface `120105`; client testing and publication pending.
+
+# v0.1.10 - 2026-09-29
 
 ## Changes
 - Added the `AGENTS.md` framework-build and interface-versioning directives; the Retail TOC interface is refreshed to the live `120100` and `ETL.VERSION` is synchronized with the TOC.
