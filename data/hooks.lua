@@ -72,7 +72,7 @@ function ETL:Install()
             self:RefreshVisibleRows(frame.ScrollBox)
         end
         self:UpdateActivitySummary(frame)
-        self:DebugMessage("Hooks installed (" .. ETL.VERSION .. ").")
+        self:DebugMessage(string.format(ETL.L["hooks_installed"], ETL.VERSION))
     end
 end
 

@@ -19,7 +19,7 @@ function ETL:DetectDuplicateInstall()
             if addonName ~= "EnhancedTravelersLog" and IsAddOnLoaded(addonName) then
                 self._duplicateWarned = true
                 self:GetSettings().enabled = false
-                self:PrintMessage("Duplicate ETL install detected (" .. addonName .. "). Progress bars disabled.")
+                self:PrintMessage(string.format(ETL.L["duplicate_detected"], addonName))
                 return true
             end
         end
@@ -170,7 +170,7 @@ function ETL:ParseRequirementProgress(requirementText)
         local normalizedCurrent = self:NormalizeNumericToken(current)
         local normalizedTotal = self:NormalizeNumericToken(total)
         if normalizedCurrent ~= nil and normalizedTotal ~= nil then
-            return normalizedCurrent, normalizedTotal, string.format("%d / %d", normalizedCurrent, normalizedTotal)
+            return normalizedCurrent, normalizedTotal, string.format(ETL.L["progress_format"], normalizedCurrent, normalizedTotal)
         end
     end
 
@@ -179,7 +179,7 @@ function ETL:ParseRequirementProgress(requirementText)
         local normalizedCurrent = self:NormalizeNumericToken(current)
         local normalizedTotal = self:NormalizeNumericToken(total)
         if normalizedCurrent ~= nil and normalizedTotal ~= nil then
-            return normalizedCurrent, normalizedTotal, string.format("%d / %d", normalizedCurrent, normalizedTotal)
+            return normalizedCurrent, normalizedTotal, string.format(ETL.L["progress_format"], normalizedCurrent, normalizedTotal)
         end
     end
 
@@ -232,12 +232,12 @@ function ETL:BuildProgress(requirements)
         end
 
         if selected and selected.total > 0 then
-            return selected.current, selected.total, selected.label or string.format("%d / %d", selected.current, selected.total)
+            return selected.current, selected.total, selected.label or string.format(ETL.L["progress_format"], selected.current, selected.total)
         end
     end
 
     if boolTotal > 0 then
-        return boolCurrent, boolTotal, string.format("%d / %d", boolCurrent, boolTotal)
+        return boolCurrent, boolTotal, string.format(ETL.L["progress_format"], boolCurrent, boolTotal)
     end
 
     return nil, nil, nil

@@ -13,9 +13,22 @@
 
 ## X-Category: UI Media, Questing & Leveling, Miscellaneous
 ## X-Website: https://github.com/RGXMods/EnhancedTravelersLog
+## X-Localizations: enUS, deDE, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
 
 ## X-Wago-ID: vNAekjNo
 
+locales/enUS.lua
+locales/deDE.lua
+locales/esES.lua
+locales/esMX.lua
+locales/frFR.lua
+locales/itIT.lua
+locales/koKR.lua
+locales/ptBR.lua
+locales/ptPT.lua
+locales/ruRU.lua
+locales/zhCN.lua
+locales/zhTW.lua
 data/core.lua
 data/settings.lua
 data/activities.lua

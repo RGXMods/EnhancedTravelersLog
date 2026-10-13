@@ -1,5 +1,7 @@
 local RGX = _G.RGXFramework
 
+local L = ETL.L
+
 local DEFAULT_ANGLE = 220
 
 local function GetMinimapAngle()
@@ -13,14 +15,14 @@ end
 function ETL:OpenTravelersLog()
     if InCombatLockdown and InCombatLockdown() then
         if _G.UIErrorsFrame then
-            UIErrorsFrame:AddMessage("Cannot open Traveler's Log in combat.", 1, 0.2, 0.2)
+            UIErrorsFrame:AddMessage(L["cannot_open_in_combat"], 1, 0.2, 0.2)
         end
         return
     end
 
     if _G.C_PlayerInfo and C_PlayerInfo.IsTravelersLogAvailable and not C_PlayerInfo.IsTravelersLogAvailable() then
         if _G.UIErrorsFrame then
-            UIErrorsFrame:AddMessage("Traveler's Log is not available right now.", 1, 0.2, 0.2)
+            UIErrorsFrame:AddMessage(L["not_available_now"], 1, 0.2, 0.2)
         end
         return
     end
@@ -53,7 +55,7 @@ end
 function ETL:ToggleMinimapIcon(show)
     if ETLDB then ETLDB.minimapIconEnabled = show end
     self:ApplyMinimapVisibility()
-    self:PrintMessage(show and "Minimap icon shown." or "Minimap icon hidden. Use /etl icon on to show again.")
+    self:PrintMessage(show and L["minimap_icon_shown"] or L["minimap_icon_hidden"])
 end
 
 function ETL:ApplyMinimapVisibility()
@@ -62,21 +64,21 @@ function ETL:ApplyMinimapVisibility()
 end
 
 function ETL:PrintStatus()
-    self:PrintMessage("Minimap icon is " .. ((ETLDB and ETLDB.minimapIconEnabled ~= false) and "shown" or "hidden") .. ".")
+    self:PrintMessage(string.format(L["minimap_status"], (ETLDB and ETLDB.minimapIconEnabled ~= false) and L["minimap_shown"] or L["minimap_hidden"]))
 end
 
 function ETL:DisplayHelp()
-    self:PrintMessage("Commands:")
-    self:PrintMessage("/etl — Open Traveler's Log")
-    self:PrintMessage("/etl icon on/off — Show or hide minimap icon")
-    self:PrintMessage("/etl status — Show status")
-    self:PrintMessage("/etl help — Show this help")
+    self:PrintMessage(L["minimap_help_header"])
+    self:PrintMessage(L["minimap_help_open"])
+    self:PrintMessage(L["minimap_help_icon"])
+    self:PrintMessage(L["minimap_help_status"])
+    self:PrintMessage(L["minimap_help_help"])
 end
 
 function ETL:HandleSlashCommands(input)
     input = self:TrimInput(input):lower()
     if     input == ""         then self:HandleMinimapClick()
-    elseif input == "icon"     then self:PrintMessage("Use /etl icon on or /etl icon off.")
+    elseif input == "icon"     then self:PrintMessage(L["minimap_icon_usage"])
     elseif input == "icon on"  then self:ToggleMinimapIcon(true)
     elseif input == "icon off" then self:ToggleMinimapIcon(false)
     elseif input == "status"   then self:PrintStatus()
@@ -101,11 +103,11 @@ RGX:OnLogin(function()
         getAngle     = GetMinimapAngle,
         setAngle     = SetMinimapAngle,
         tooltip = {
-            title = "|TInterface\\AddOns\\EnhancedTravelersLog\\media\\logo:18:18:0:0|t |cffbc6fa8E|r|cffffffffnhanced|r |cffbc6fa8T|r|cffffffffraveler's|r |cffbc6fa8L|r|cffffffffog|r|cffbc6fa8!|r",
+            title = L["minimap_tooltip_title"],
             lines = {
-                { left = "|cffbc6fa8Left-Click|r",       right = "Open Traveler's Log" },
-                { left = "|cff4ecdc4Left-Drag|r",        right = "Move around minimap" },
-                { left = "|cffe74c3cCtrl+Right-Click|r", right = "Hide minimap icon" },
+                { left = L["minimap_tooltip_left_click"],       right = L["minimap_tooltip_left_click_action"] },
+                { left = L["minimap_tooltip_left_drag"],        right = L["minimap_tooltip_left_drag_action"] },
+                { left = L["minimap_tooltip_ctrl_right_click"], right = L["minimap_tooltip_ctrl_right_click_action"] },
             },
         },
         onLeftClick  = function() ETL:HandleMinimapClick() end,
