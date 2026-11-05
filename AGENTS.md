@@ -18,7 +18,7 @@ EnhancedTravelersLog is a Retail-only WoW addon that adds progress bars and a mi
 ## Testing And Release
 
 - There is no build step or automated test suite. Install the repository as `EnhancedTravelersLog` in the Retail AddOns directory with `RGX-Framework`, run `/reload`, then verify `/etl`, the minimap launcher, Traveler's Log hooks, activity refreshes, settings persistence, and progress bars.
-- Stable releases use `vX.Y.Z` tags. `.github/workflows/release.yml` validates the tag against the TOC version and packages with BigWigsMods/packager; pushes to `dev` and `alpha` use those release channels. Update `docs/CHANGES.md` and add the matching `docs/changelogs/<version>.md` entry when preparing a release.
+- Stable releases use `vX.Y.Z` tags. `.github/workflows/release.yml` validates the tag against the TOC version and packages with the repo's own `tools/release/packager.mjs` (not BigWigs) and publishes with `tools/release/publish-release.mjs` to GitHub, CurseForge and Wago and `tools/release/publish-wowinterface.mjs` to WoWInterface; pushes to `dev` and `alpha` use those release channels. Update `docs/CHANGES.md` and add the matching `docs/changelogs/<version>.md` entry when preparing a release.
 
 ## Building With RGX-Framework
 
