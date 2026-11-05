@@ -1,4 +1,9 @@
-﻿# Non-beta Candidate: [v0.1.11](changelogs/0.1.11.md)
+## v0.1.12 - 2026-11-05
+
+- Releases are now built with our own packager and published to CurseForge, Wago and GitHub (and WoWInterface where a listing exists).
+- No gameplay changes.
+
+# Non-beta Candidate: [v0.1.11](changelogs/0.1.11.md)
 
 Retail 12.1.5 / Interface `120105`; client testing and publication pending.
 
